@@ -1,8 +1,23 @@
+var Morning = React.createClass({
+  render: function() {
+    return (
+      React.createElement('h1', { className: 'morning' }, 'Morning')
+    );
+  }
+});
+
+var Afternoon = React.createClass({
+  render: function() {
+    return (
+      React.createElement('h1', { className: 'afternoon' }, 'Aternoon')
+    );
+  }
+});
+
 var Clock = React.createClass({
   render: function() {
-    var time = this.props.hour < 12 ? 'Morning' : 'Afternoon';
     return (
-      React.createElement('h1', null, time)
+      this.props.hour < 12 ? React.createElement(Morning) : React.createElement(Afternoon) 
     );
   }
 });
