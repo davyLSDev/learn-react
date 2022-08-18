@@ -9,7 +9,7 @@ var Morning = React.createClass({
 var Afternoon = React.createClass({
   render: function() {
     return (
-      React.createElement('h1', { className: 'afternoon' }, 'Apternoon')
+      React.createElement('h1', { className: 'afternoon' }, 'Afternoon')
     );
   }
 });
