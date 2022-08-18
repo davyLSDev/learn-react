@@ -1,7 +1,9 @@
+var component = React.createElement;
+
 var Morning = React.createClass({
   render: function() {
     return (
-      React.createElement('h1', { className: 'morning' }, 'Morning')
+      component('h1', { className: 'morning' }, 'Morning')
     );
   }
 });
@@ -9,7 +11,7 @@ var Morning = React.createClass({
 var Afternoon = React.createClass({
   render: function() {
     return (
-      React.createElement('h1', { className: 'afternoon' }, 'Afternoon')
+      component('h1', { className: 'afternoon' }, 'Afternoon')
     );
   }
 });
@@ -17,7 +19,7 @@ var Afternoon = React.createClass({
 var Clock = React.createClass({
   render: function() {
     return (
-      this.props.hour < 12 ? React.createElement(Morning) : React.createElement(Afternoon) 
+      this.props.hour < 12 ? component(Morning) : component(Afternoon) 
     );
   }
 });
@@ -27,14 +29,14 @@ var hour = (new Date).getHours();
 var Greeting = React.createClass({
   render: function() {
     return (
-      React.createElement('h1', null, 'Hello, world!')
+      component('h1', null, 'Hello, world!')
     );
   }
 });
 
 window.addEventListener('load', function() {
   React.render(
-    React.createElement(Clock, { hour: hour }),
+    component(Clock, { hour: hour }),
     document.body
   );
 });
